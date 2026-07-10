@@ -15,7 +15,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <section style={{
+    <section className="hero-section" style={{
       position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden',
       background: `url('/hero.png')`,
       backgroundSize: 'cover', backgroundPosition: 'center'
@@ -34,7 +34,7 @@ function HeroSection() {
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1, width: '100%' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 60, alignItems: 'center' }}>
-          <div style={{ animation: 'fadeInUp 0.8s ease', maxWidth: 600 }}>
+          <div className="hero-text" style={{ animation: 'fadeInUp 0.8s ease', maxWidth: 600 }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 16px', borderRadius: 100, background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.25)', marginBottom: 24 }}>
               <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#10B981', animation: 'pulse-ring 2s infinite' }} />
               <span style={{ fontSize: 13, color: '#9CA3AF', fontWeight: 500 }}>Worldwide IPTV Service — Risk Free</span>
@@ -85,6 +85,14 @@ function HeroSection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-section { background-position: left center !important; }
+          .hero-text { text-align: center; margin: 0 auto; }
+          .hero-text > div { justify-content: center; }
+        }
+      `}</style>
     </section>
   );
 }
